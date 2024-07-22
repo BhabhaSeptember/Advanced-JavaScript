@@ -1,4 +1,7 @@
- // /* CHAPTER PROJECT (MATH MULTIPLICATION TABLE) */
+"use strict";
+
+//********************MATH MULTIPLICATION TABLE***********************/
+
 const multTable = [];
 const numOfTimes = 5; //# of columns
 for (let x = 0; x < numOfTimes; x++) {
@@ -7,7 +10,7 @@ for (let x = 0; x < numOfTimes; x++) {
         tempArray.push(x*y);
     }
     multTable.push(tempArray);
-}
+};
 console.log(multTable);
 console.table(multTable);
 

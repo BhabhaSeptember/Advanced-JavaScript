@@ -47,6 +47,7 @@ class Menu {
     return (this.#item1 * this.qty1) + (this.#item2 * this.qty2);
   }
 
+//***********GETTER && SETTER METHOD*/
   get total() {
     return this.totalCost();
   }
