@@ -46,11 +46,12 @@ console.log("href         =", window.location.href);
 
 let output = document.querySelector(".output");
 output.textContent = "Output Div";
+
 output.classList.add("red");
 output.id = "tester";
 output.style.backgroundColor = "red";
 console.log("Document URL =", document.URL);
-output.textContent = document.URL;
+// output.textContent = document.URL;
 
 
 
