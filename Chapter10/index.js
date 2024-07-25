@@ -258,17 +258,17 @@
 
 //******************************PRACTICE EXERCISE 10.10************************/
 
-let message = document.getElementById("message");
-let addItem = document.getElementById("addItem");
-let addButton = document.getElementById("addNew");
-let output = document.getElementById("output");
-let sList = document.getElementById("sList");
+// let message = document.getElementById("message");
+// let addItem = document.getElementById("addItem");
+// let addButton = document.getElementById("addNew");
+// let output = document.getElementById("output");
+// let sList = document.getElementById("sList");
 
-addButton.addEventListener("click", addOne);
+// addButton.addEventListener("click", addOne);
 
-function addOne() {
-    let list = document.createElement("li");
-    let item = document.getElementById("addItem").value;
-    list.appendChild(document.createTextNode(item));
-    document.getElementById("sList").appendChild(list);
-}
+// function addOne() {
+//     let list = document.createElement("li");
+//     let item = document.getElementById("addItem").value;
+//     list.appendChild(document.createTextNode(item));
+//     document.getElementById("sList").appendChild(list);
+// }

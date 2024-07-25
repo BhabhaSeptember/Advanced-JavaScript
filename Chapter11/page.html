@@ -1,12 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ch11 - Interactive Content & Event Listeners</title>
-</head>
-<body>
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3. Ch11 (Interactive Content)</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>3. Ch11 (Interactive Content)</h1>
+    <hr />
+
+    <!-- // SPECIFYING EVENTS WITH HTML -->
+<!-- <p id="unique" onclick="magic()">Click here for magic!</p> -->
+
+    <!-- PRACTICE EXERCISE 11.2 (SEE JS)
+<div>red</div>
+ <div>blue</div>
+ <div>green</div>
+ <div>yellow</div> -->
+
+    <!-- MOUSE EVENT HANDLERS (SEE JS)
+EXAMPLE 1
+<div id="divvy" onmouseover="changeColor()" style="width: 100px; 
+height: 100px; background-color: pink;"> -->
+
+    <!-- PRACTICE EXERCISE 11.4 (SEE JS)
+<div class="output"></div> -->
+
+    <!-- THE EVENT TARGET PROPERTY, 
+EXAMPLE 1 (SEE JS)
+<button type="button" onclick="triggerSomething()">Click</button>
+<br><br>
+EXAMPLE 2 (SEE JS)
+<div id="welcome">Hi there!</div>
+ <form>
+ <input type="text" name="firstname" placeholder="First name" />
+ <input type="text" name="lastname" placeholder="Last name" />
+ <input type="button" onclick="sendInfo()" value="Submit" />
+ </form> -->
+
+    <!-- PRACTICE EXERCISE 11.5 (SEE JS)
+ <div class="output"></div>
+ <input type="text" name="message" placeholder="Your Message">
+ <button class="btn1">Button 1</button>
+ <button class="btn2">Button 2</button>
+ <div>
+ <button class="btn3">Log</button>
+ </div> -->
+
+    <!-- DOM EVENT FLOW (SEE CSS & JS)
+    <div id="message">Bubbling events</div>
+    <div id="output">
+      1
+      <div>
+        2
+        <div>
+          3
+          <div>
+            4
+            <div>5</div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- PRACTICE EXERCISE 11.6 (SEE CSS & JS)
+<div class="container">
+    <div class="box" id="box0">Box #1</div>
+    <div class="box" id="box1">Box #2</div>
+    <div class="box" id="box2">Box #3</div>
+    <div class="box" id="box3">Box #4</div>
+    </div> -->
+
+    <!-- ONCHANGE && ONBLUR (SEE JS)
+    <div id="welcome">Hi there!</div>
+    <form>
+      <input
+        type="text"
+        name="firstname"
+        placeholder="First name"
+        onchange="logEvent()"
+      />
+      <input
+        type="text"
+        name="lastname"
+        placeholder="Last name"
+        onblur="logEvent()"
+      />
+      <input type="button" onclick="sendInfo()" value="Submit" />
+    </form> -->
+
+    <!-- PRACTICE EXERCISE 11.7 (SEE JS)
+    <div class="output1">
+    </div>
+    <input type="text" placeholder="First Name" name="first"><br>
+    <input type="text" placeholder="Last Name" name="last"><br> -->
+
+    <!-- KEY EVENT HANDLER, EXAMPLE 1 (SEE JS)
+    <div id="wrapper">JavaScript is fun!</div>
+    <input type="text" name="myNum1" onkeypress="numCheck()" />
+    <input type="text" name="myNum2" onkeypress="numCheck2()" />
+    <br />
+    <br />
+
+    EXAMPLE 2
+    <div id="wrapper">JavaScript is fun!</div>
+    <input
+      type="text"
+      name="myNum1"
+      onkeypress="return numCheck()"
+      onpaste="return false"
+    />
+    <input
+      type="text"
+      name="myNum2"
+      onkeypress="return numCheck2()"
+      onpaste="return false"
+    /> -->
+
+    <!-- PRACTICE EXERCISE 11.8 (SEE JS)
+    <div class="output">Output: </div>
+    <input type="text" name="myNum1" />
+    <input type="text" name="myNum2" /> -->
+
+    <!-- DRAG AND DROP ELEMENTS (SEE CSS & HTML)
+    <div class="box" ondrop="dDrop()" ondragover="nDrop()">
+      1
+      <div id="dragme" ondragstart="dStart()" draggable="true">
+        Drag Me Please!
+      </div>
+    </div>
+    <div class="box" ondrop="dDrop()" ondragover="nDrop()">2</div> -->
+
+    <!-- PRACTICE EXERCISE 11.9 (SEE CSS & HTML)
+    <div class="box">1
+        <div id="dragme" draggable="true">
+        Drag Me Please!
+        </div>
+        </div>
+        <div class="box">2</div> -->
+
+    <!-- 
+    FORM SUBMISSION,
+    EXAMPLE 1 (SEE JS)
+<form action="anotherpage.html" method="get">
+    <input type="text" placeholder="name" name="name" />
+    <input type="submit" value="send" />
+    </form>
+
+    EXAMPLE 2 (SEE JS)
+    <div id="wrapper"></div>
+    <form action="anotherpage.html" method="get" onsubmit="return valForm()">
+      <input 
+        type="text"
+        id="firstName"
+        name="firstName"
+        placeholder="First name"
+      />
+      <input
+        type="text"
+        id="lastName"
+        name="lastName"
+        placeholder="Last name"
+      />
+      <input type="text" id="age" name="age" placeholder="Age" />
+      <input type="submit" value="submit" />
+    </form>
+
+    PRACTICE EXERCISE 11.10 (SEE JS)
+    <form action="index2.html" method="get">
+      First: <input type="text" name="first" /> <br />
+      Last:  <input type="text" name="last" /> <br />
+      Age:  <input type="number" name="age" /> <br />
+      <input type="submit" value="submit" />
+    </form> -->
+
+    <!-- ANIMATING ELEMENTS (SEE CSS & JS)<br> <br> 
+    <button onclick="toTheRight()">Go right</button>
+    <div id="block"></div>
+
+    PRACTICE EXERCISE 11.11 
+    <div id="block">Click to see me move</div> -->
+
+
+
+
+
     <script src="index.js"></script>
-</body>
+  </body>
 </html>

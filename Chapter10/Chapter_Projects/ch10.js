@@ -21,48 +21,48 @@
 
 //**************************INTERACTIVE VOTING SYSTEM**************/
 
-// let myArray = ["Paul", "Steve", "Jabu", "Pravesh", "Niniola"];
+let myArray = ["Paul", "Steve", "Jabu", "Pravesh", "Niniola"];
 
-// let input = document.getElementById("addFriend");
-// let addButton = document.getElementById("addNew");
-// let output = document.getElementById("output");
+let input = document.getElementById("addFriend");
+let addButton = document.getElementById("addNew");
+let output = document.getElementById("output");
 
-// addButton.addEventListener("click", () => {
-//     let newFriend = input.value;
-//     myArray.push(newFriend);
-//     adder(newFriend, myArray.length, 0);
-// });
+addButton.addEventListener("click", () => {
+    let newFriend = input.value;
+    myArray.push(newFriend);
+    adder(newFriend, myArray.length, 0);
+});
 
-// function build() {
-//     myArray.forEach((friend, index) => {
-//         adder(friend, index, 0);
-//     });
-// };
-// window.onload = build();
+function build() {
+    myArray.forEach((friend, index) => {
+        adder(friend, index, 0);
+    });
+};
+window.onload = build();
 
-// function adder(friendName, index, counter) {
-//     const tr = document.createElement("tr");
-//     const td1 = document.createElement("td");
-//     const td2 = document.createElement("td");
-//     const td3 = document.createElement("td");
+function adder(friendName, index, counter) {
+    const tr = document.createElement("tr");
+    const td1 = document.createElement("td");
+    const td2 = document.createElement("td");
+    const td3 = document.createElement("td");
 
-//     td1.classList.add("box");
-//     td1.textContent = index + 1;
-//     td2.textContent = friendName;
-//     td3.textContent = counter;
+    td1.classList.add("box");
+    td1.textContent = index + 1;
+    td2.textContent = friendName;
+    td3.textContent = counter;
 
-//     tr.append(td1);
-//     tr.append(td2);
-//     tr.append(td3);
+    tr.append(td1);
+    tr.append(td2);
+    tr.append(td3);
 
-//     tr.addEventListener("click", () => {
-//         console.log(tr.lastChild);
-//         let value = Number(tr.lastChild.textContent);
-//         value++;
-//         tr.lastChild.textContent = value;
-//     })
-//     output.appendChild(tr);
-// };
+    tr.addEventListener("click", () => {
+        console.log(tr.lastChild);
+        let value = Number(tr.lastChild.textContent);
+        value++;
+        tr.lastChild.textContent = value;
+    })
+    output.appendChild(tr);
+};
 
 //**************************HANGMAN GAME*******************/
 
