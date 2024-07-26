@@ -260,3 +260,164 @@
 
 //--------------------------------------------------------------------
 
+// // //PRACTICE EXERCISE 12.1 (SEE HTML)
+// // // const output = document.getElementById("output");
+// // // const searchValue = document.getElementById("sText");
+// // // const replaceValue = document.getElementById("rText");
+// // // document.querySelector("button").addEventListener("click", lookUp);
+// // // function lookUp() {
+// // //   const s = output.textContent;
+// // //   const rt = replaceValue.value;
+// // //   const re = new RegExp(searchValue.value, "gi");
+// // //   if (s.match(re)) {
+// // //     let newValue = s.replace(re, rt);
+// // //     output.textContent = newValue;
+// // //   }
+// // // }
+
+
+// // //PRACTICE EXERCISE 12.2 (SEE HTML) [[[[[[[[[[[[[DEMO]]]]]]]]]]]]]]]]]]
+// // // const output = document.querySelector(".output");
+// // // const emailVal = document.querySelector("input");
+// // // const btn = document.querySelector("button");
+// // // const emailExp = /([A-Za-z0-9._-]+@[A-Za-z0-9._-]+\.[A-Za-z0-9]+)\w+/;
+// // // btn.addEventListener("click", (e) => {
+// // //   const input = emailVal.value;
+// // //   let response = "";
+// // //   const result = emailExp.test(input);
+
+// // //   if (!result) {
+// // //     response = "Invalid Email";
+// // //     output.style.color = "red";
+// // //   } else {
+// // //     response = "Valid Email";
+// // //     output.style.color = "green";
+// // //   }
+// // //   emailVal.value = "";
+// // //   output.textContent = response;
+// // // });
+
+
+
+// // //PRACTICE EXERCISE 12.6
+// // // console.log(document.cookie);
+// // //  console.log(rCookie("test1"));
+// // //  console.log(rCookie("test"));
+// // //  cCookie("test1", "new Cookie", 30);
+// // //  dCookie("test2");
+// // //  function cCookie(cName, value, days) {
+// // //  if (days) {
+// // //  const d = new Date();
+// // //  d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+// // //  let e = "; expires=" + d.toUTCString();
+// // //  document.cookie = cName + "=" + value + e + "; path=/";
+// // //  }
+// // //  }
+// // //  function rCookie(cName) {
+// // //  let cookieValue = false;
+// // //  let arr = document.cookie.split("; ");
+// // //  arr.forEach(str => {
+// // //  const cookie = str.split("=");
+// // //  if (cookie[0] == cName) {
+// // //  cookieValue = cookie[1];
+// // //  }
+// // //  });
+// // //  return cookieValue;
+// // //  }
+// // //  function dCookie(cName) {
+// // //  cCookie(cName, "", -1);
+// // //  }
+
+
+// // //PRACTICE EXERCISE 12.7 (SEE HTML)
+// // // const userTask = document.querySelector(".main input");
+// // // const addBtn = document.querySelector(".main button");
+// // // const output = document.querySelector(".output");
+// // // const tasks = JSON.parse(localStorage.getItem("tasklist")) || [];
+// // // addBtn.addEventListener("click", createListItem);
+// // // if (tasks.length > 0) {
+// // //   tasks.forEach((task) => {
+// // //     genItem(task.val, task.checked);
+// // //   });
+// // // }
+// // // function saveTasks() {
+// // //   localStorage.setItem("tasklist", JSON.stringify(tasks));
+// // // }
+// // // function buildTasks() {
+// // //   tasks.length = 0;
+// // //   const curList = output.querySelectorAll("li");
+// // //   curList.forEach((el) => {
+// // //     const tempTask = {
+// // //       val: el.textContent,
+// // //       checked: false,
+// // //     };
+// // //     if (el.classList.contains("ready")) {
+// // //       tempTask.checked = true;
+// // //     }
+// // //     tasks.push(tempTask);
+// // //   });
+// // //   saveTasks();
+// // // }
+// // // function genItem(val, complete) {
+// // //   const li = document.createElement("li");
+// // //   const temp = document.createTextNode(val);
+// // //   li.appendChild(temp);
+// // //   output.append(li);
+// // //   userTask.value = "";
+// // //   if (complete) {
+// // //     li.classList.add("ready");
+// // //   }
+// // //   li.addEventListener("click", (e) => {
+// // //     li.classList.toggle("ready");
+// // //     buildTasks();
+// // //   });
+// // //   return val;
+// // // }
+// // // function createListItem() {
+// // //   const val = userTask.value;
+// // //   if (val.length > 0) {
+// // //     const myObj = {
+// // //       val: genItem(val, false),
+// // //       checked: false,
+// // //     };
+// // //     tasks.push(myObj);
+// // //     saveTasks();
+// // //   }
+// // // }
+
+
+// // //PRACTICE EXERCISE 12.8
+// // // let myList = [
+// // //   {
+// // //     name: "Learn JavaScript",
+// // //     status: true,
+// // //   },
+// // //   {
+// // //     name: "Try JSON",
+// // //     status: false,
+// // //   },
+// // // ];
+// // // reloader();
+// // // function reloader() {
+// // //   myList.forEach((el) => {
+// // //     console.log(`${el.name} = ${el.status}`);
+// // //   });
+// // // }
+
+
+// // //PRACTICE EXERCISE 12.9
+// // // let myList = [
+// // //   {
+// // //     name: "Learn JavaScript",
+// // //     status: true,
+// // //   },
+// // //   {
+// // //     name: "Try JSON",
+// // //     status: false,
+// // //   },
+// // // ];
+// // // const newStr = JSON.stringify(myList);
+// // // const newObj = JSON.parse(newStr);
+// // // newObj.forEach((el) => {
+// // //   console.log(el);
+// // // });
