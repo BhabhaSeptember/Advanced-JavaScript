@@ -1,20 +1,21 @@
 
 // // //CHAPTER PROJECTS
 // // // 1. EMAIL EXTRACTOR
-// const firstArea = document.querySelector("textarea[name='txtarea']");
-// const secArea = document.querySelector("textarea[name='txtarea2']");
-// const btn = document.querySelector("button");
+// let firstArea = document.querySelector("textarea[name='txtarea']");
+// let secArea = document.querySelector("textarea[name='txtarea2']");
+// let btn = document.querySelector("button");
 
 // btn.addEventListener("click", lookUp);
 
 // function lookUp() {
-//   const inputEmail = firstArea.value;
-//   const validEmail = inputEmail.match(
-//     /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi
+//   let inputEmail = firstArea.value;
+// // // If you want something at least once, but optionally more often, you can use the plus sign: +
+//   let validEmail = inputEmail.match(
+//     /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi  //'g' - to find all matches
 //   );
-//   const emailList = [];
+//   let emailList = [];
 //   for (let x = 0; x < validEmail.length; x++) {
-//     if (emailList.indexOf(validEmail[x]) === -1) {
+//     if (emailList.indexOf(validEmail[x]) === -1) { //if input email is not already defined in email list array
 //       emailList.push(validEmail[x]);
 //     }
 //   }
@@ -23,82 +24,79 @@
 
 
 // // // //2. FORM VALIDATOR
-const myForm = document.querySelector("form");
-const inputs = document.querySelectorAll("input");
-const errors = document.querySelectorAll(".error");
-const required = ["email", "userName", "password"];
+// let myForm = document.querySelector("form");
+// let inputs = document.querySelectorAll("input");
+// let errors = document.querySelectorAll(".error");
+// let required = ["email", "userName", "password"];
 
-myForm.addEventListener("submit", validation);
+// myForm.addEventListener("submit", validation);
 
-function validation(e) {
-  let data = {};
-  e.preventDefault();
-
-
-  errors.forEach(function (item) {
-    item.classList.add("hide");
-  });
-
-  let error = false;
-
-  inputs.forEach(function (el) {
-    let tempName = el.getAttribute("name");
-    if (tempName !== null) {
-      el.style.borderColor = "#97d328";
-      if (el.value.length === 0 && required.includes(tempName)) {
-        addError(el, "Required Field", tempName);
-        error = true;
-      }
-
-      if (tempName === "email") {
-        let exp = /([A-Za-z0-9._-]+@[A-Za-z0-9._-]+\.[A-Za-z0-9]+)\w+/;
-        let result = exp.test(el.value);
-        if (!result) {
-          addError(el, "Invalid Email", tempName);
-          error = true;
-        }
-      }
-
-      if (tempName === "password") {
-        let exp = /[A-Za-z0-9]+$/;
-        let result = exp.test(el.value);
-        if (!result) {
-          addError(el, "Only numbers and Letters", tempName);
-          error = true;
-        }
-        if (!(el.value.length > 6 && el.value.length < 15)) {
-          addError(el, "Needs to be between 7-14 " + "characters", tempName);
-          error = true;
-        }
-      }
-      data[tempName] = el.value;
-    }
-  });
-  if (!error) {
-    myForm.submit();
-  }
-}
-
-function addError(el, mes, fieldName) {
-  let temp = el.nextElementSibling;
-  temp.classList.remove("hide");
-  temp.textContent = fieldName.toUpperCase() + " " + mes;
-  el.style.borderColor = "red";
-  el.focus();
-}
+// function validation(e) {
+//   let data = {};
+//   e.preventDefault();
 
 
+//   errors.forEach(function (item) {
+//     item.classList.add("hide");
+//   });
+
+//   let error = false;
+
+//   inputs.forEach(function (el) {
+//     let tempName = el.getAttribute("name");
+//     if (tempName !== null) {
+//       el.style.borderColor = "#97d328";
+//       if (el.value.length === 0 && required.includes(tempName)) {
+//         addError(el, "Required Field", tempName);
+//         error = true;
+//       }
+
+//       if (tempName === "email") {
+//         let exp = /([A-Za-z0-9._-]+@[A-Za-z0-9._-]+\.[A-Za-z0-9]+)\w+/;
+//         let result = exp.test(el.value);
+//         if (!result) {
+//           addError(el, "Invalid Email", tempName);
+//           error = true;
+//         }
+//       }
+
+//       if (tempName === "password") {
+//         let exp = /[A-Za-z0-9]+$/;
+//         let result = exp.test(el.value);
+//         if (!result) {
+//           addError(el, "Only numbers and Letters", tempName);
+//           error = true;
+//         }
+//         if (!(el.value.length > 6 && el.value.length < 15)) {
+//           addError(el, "Needs to be between 7-14 " + "characters", tempName);
+//           error = true;
+//         }
+//       }
+//       data[tempName] = el.value;
+//     }
+//   });
+//   if (!error) {
+//     myForm.submit();
+//   }
+// }
+
+// function addError(el, mes, fieldName) {
+//   let temp = el.nextElementSibling;
+//   temp.classList.remove("hide");
+//   temp.textContent = fieldName.toUpperCase() + " " + mes;
+//   el.style.borderColor = "red";
+//   el.focus();
+// }
 
 
 
-// // // //3. SIMPLE MATH QUIZ
-// const app = (function () {
-  
-//   const val1 = document.querySelector(".val1");
-//   const val2 = document.querySelector(".val2");
-//   const output = document.querySelector(".output");
-//   const answer = document.querySelector("input");
-//   const game = {};
+// //3. SIMPLE MATH QUIZ
+// let app = (function () {
+//   let val1 = document.querySelector(".val1");
+//   let val2 = document.querySelector(".val2");
+//   let output = document.querySelector(".output");
+//   let answer = document.querySelector("input");
+//   let game = {};
 
 //   function init() {
 //     document.querySelector("button").addEventListener("click", checker);
@@ -118,7 +116,7 @@ function addError(el, mes, fieldName) {
 //   }
 
 //   function checker() {
-//     let mark = answer.value == game.answer ? "green" : "red";
+//     let mark = answer.value === game.answer ? "green" : "red";
 //     output.innerHTML += 
 //     `<div style="color:${mark}"> 
 //     ${game.val1} + ${game.val2} = ${game.answer} (${answer.value})
@@ -131,3 +129,6 @@ function addError(el, mes, fieldName) {
 //   };
 // })();
 // document.addEventListener("DOMContentLoaded", app.init);
+
+
+
