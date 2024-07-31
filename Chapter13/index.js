@@ -71,20 +71,6 @@
 //   console.log("You're doing great, keep going!");
 // }
 
-//PRACTICE EXERCISE 13.1
-// function greet(fullName) {
-//   console.log(`Welcome, ${fullName[0]} ${fullName[1]}`);
-// }
-// function processCall(userName, callback) {
-//   const fullName = userName.split(" ");
-//   callback(fullName);
-// }
-// processCall("Bhabha September", greet);
-
-
-
-
-
 //PROMISES
 //Note: Organizes sequence of code to make it manageable
 // Object that connects code that produces result to that which needs to use the result
@@ -175,28 +161,6 @@
 //     console.log(value);
 //   });
 
-//PRACTICE EXERCISE 13.2
-// const promise = new Promise((resolve, reject) => {
-//   resolve("Start Counting");
-// });
-// function counter(val) {
-//   console.log(val);
-// }
-// promise.then((value) => {
-//     counter(value);
-//     return "one";
-//   })
-//   .then((value) => {
-//     counter(value);
-//     return "two";
-//   })
-//   .then((value) => {
-//     counter(value);
-//     return "three";
-//   })
-//   .then((value) => {
-//     counter(value);
-//   });
 
 
 
@@ -232,24 +196,7 @@
 
 
 
-//PRACTICE EXERCISE 13.3
-// let cnt = 0;
-// function outputTime(val) {
-//   return new Promise((resolve) => {
-//     setTimeout(() => {
-//       cnt++;
-//       resolve(`x value ${val} counter:${cnt}`);
-//     }, 1000);
-//   });
-// }
-// async function aCall(val) {
-//   console.log(`ready ${val} counter:${cnt}`);
-//   const res = await outputTime(val);
-//   console.log(res);
-// }
-// for (let x = 1; x < 4; x++) {
-//   aCall(x);
-// }
+
 
 
 
@@ -297,3 +244,60 @@
 // }
 
 // --------------------------------------------------------------------------------------------
+
+
+//****************PRACTICE EXERCISE 13.1**********
+// function greet(fullName) {
+//   console.log(`Welcome, ${fullName[0]} ${fullName[1]}`);
+// }
+// function processCall(userName, callback) {
+//   const fullName = userName.split(" ");
+//   callback(fullName);
+// }
+// processCall("Bhabha September", greet);
+
+
+
+//************PRACTICE EXERCISE 13.2**********
+// const promise = new Promise((resolve, reject) => {
+//   resolve("Start Counting");
+// });
+// function counter(val) {
+//   console.log(val);
+// }
+// promise.then((value) => {
+//     counter(value);
+//     return "one";
+//   })
+//   .then((value) => {
+//     counter(value);
+//     return "two";
+//   })
+//   .then((value) => {
+//     counter(value);
+//     return "three";
+//   })
+//   .then((value) => {
+//     counter(value);
+//   });
+
+
+
+//*****************8PRACTICE EXERCISE 13.3************
+// let cnt = 0;
+// function outputTime(val) {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       cnt++;
+//       resolve(`x value ${val} counter:${cnt}`);
+//     }, 1000);
+//   });
+// }
+// async function aCall(val) {
+//   console.log(`ready ${val} counter:${cnt}`);
+//   const res = await outputTime(val);
+//   console.log(res);
+// }
+// for (let x = 1; x < 4; x++) {
+//   aCall(x);
+// }
