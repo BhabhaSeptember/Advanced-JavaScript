@@ -5,20 +5,7 @@
 // //SPECIFYING EVENTS WITH JS
 // document.getElementById("unique").onclick = function() { magic(); };
 
-// //PRACTICE EXERCISE 11.1
-// let darkMode = false;
-// window.onclick = () => {
-//   console.log(darkMode);
-//   if (!darkMode) {
-//     document.body.style.backgroundColor = "black";
-//     document.body.style.color = "white";
-//     darkMode = true;
-//   } else {
-//     document.body.style.backgroundColor = "white";
-//     document.body.style.color = "black";
-//     darkMode = false;
-//   }
-// };
+
 
 //SPECIFYING EVENTS WITH EVENT LISTENERS
 //document.getElementById("unique").addEventListener("click", magic);
@@ -26,13 +13,7 @@
 //USE BELOW SYNTAX IF YOU NEED TO ADD PARAMETERS WITH THE FUNCTION
 //document.getElementById("unique").addEventListener("click", function() { magic(arg1, arg2) });
 
-//PRACTICE EXERCISE 11.2
-// const divs = document.querySelectorAll("div");
-// divs.forEach((el) => {
-//   el.addEventListener("click", () => {
-//     document.body.style.backgroundColor = el.textContent;
-//   });
-// });
+
 
 //THE ONLOAD EVENT HANDLER
 //window.onload = function() {
@@ -44,17 +25,7 @@
 
 // <!-- <body onload="unique()"></body> -->
 
-//PRACTICE EXERCISE 11.3
-// document.addEventListener("DOMContentLoaded", (e) => {
-//   message("Document ready", e);
-// });
-// window.onload = (e) => {
-//   message("Window ready", e);
-// };
-// function message(val, event) {
-//   console.log(event);
-//   console.log(val);
-// }
+
 
 //MOUSE EVENT HANDLERS
 //EXAMPLE 1 (SEE HTML)
@@ -85,7 +56,192 @@
 //   el.style.backgroundColor = color;
 // }
 
-//PRACTICE EXERCISE 11.4 (SEE HTML)
+
+//THE EVENT TARGET PROPERTY
+// console.dir(event);
+//
+//EXAMPLE 1 (SEE HTML)
+// function triggerSomething() {
+//     console.dir(event.target);
+//     }
+
+//EXAMPLE 2 (SEE HTML)
+// function sendInfo() {
+//     let p = event.target.parentElement;
+//     message("Welcome " + p.firstname.value + " " + p.lastname.
+//    value);
+//     }
+//     function message(m) {
+//     document.getElementById("welcome").innerHTML = m;
+//     }
+
+
+
+// //DOM EVENT FLOW (SEE CSS & HTML)
+// function bubble() {
+//   console.log(this.innerText);
+// }
+// let divs = document.getElementsByTagName("div");
+// for (let i = 0; i < divs.length; i++) {
+//   divs[i].addEventListener("click", bubble, true);
+// }
+
+
+
+//ONCHANGE && ONBLUR (SEE HTML)
+// function logEvent() {
+//   let p = event.target;
+//   if (p.name === "firstname") {
+//     message("First Name Changed to " + p.value);
+//   } else {
+//     message("Last Name Changed to " + p.value);
+//   }
+// }
+// function sendInfo() {
+//   let p = event.target.parentElement;
+//   message("Welcome " + p.firstname.value + " " + p.lastname.value);
+// }
+// function message(m) {
+//   document.getElementById("welcome").innerHTML = m;
+// }
+
+
+//KEY EVENT HANDLER
+//event.key;
+
+//EXAMPLE 1(SEE HTML)
+// function numCheck() {
+//   message("Number: " + !isNaN(event.key));
+//   return !isNaN(event.key);
+// }
+// function numCheck2() {
+//   message("Not a number: " + isNaN(event.key));
+//   return isNaN(event.key);
+// }
+// function message(m) {
+//   document.getElementById("wrapper").innerHTML = m;
+// }
+
+// onkeypress="return numCheck2()";
+
+//EXAMPLE 2 (SEE HTML)
+// function numCheck() {
+//   message(!isNaN(event.key));
+//   return !isNaN(event.key);
+// }
+// function numCheck2() {
+//   message(isNaN(event.key));
+//   return isNaN(event.key);
+// }
+// function message(m) {
+//   document.getElementById("wrapper").innerHTML = m;
+// }
+
+
+//DRAG AND DROP ELEMENTS (SEE HTML & CSS)
+// let holderItem;
+// function dStart() {
+//   holderItem = event.target;
+// }
+// function nDrop() {
+//   event.preventDefault();
+// }
+// function dDrop() {
+//   event.preventDefault();
+//   if (event.target.className === "box") {
+//     event.target.appendChild(holderItem);
+//   }
+// }
+
+
+//FORM SUBMISSION
+//EXAMPLE 1 (SEE HTML)
+// let q = window.location.search;
+// let params = new URLSearchParams(q);
+// let name = params.get("name");
+// console.log(name);
+
+//EXAMPLE 2 (SEE HTML)
+// function valForm() {
+//   var p = event.target.children;
+//   if (p.firstName.value === "") {
+//     message("First name required!!");
+//     return false;
+//   }
+//   if (p.lastName.value === "") {
+//     message("Last name required!!");
+//     return false;
+//   }
+//   if (p.age.value === "") {
+//     message("Age required!!");
+//     return false;
+//   }
+//   return true;
+// }
+// function message(m) {
+//   document.getElementById("wrapper").innerHTML = m;
+// }
+
+
+//ANIMATING ELEMENTS (SEE HTML & CSS)
+// function toTheRight() {
+//   let b = document.getElementById("block");
+//   let x = 0;
+//   setInterval(function () {
+//     if (x === 600) {
+//       clearInterval();
+//     } else {
+//       x++;
+//       b.style.left = x + "px";
+//     }
+//   }, 2);
+// }
+
+
+
+//-------------------------------------------------------------------------/
+
+// //************PRACTICE EXERCISE 11.1************
+// let darkMode = false;
+// window.onclick = () => {
+//   console.log(darkMode);
+//   if (!darkMode) {
+//     document.body.style.backgroundColor = "black";
+//     document.body.style.color = "white";
+//     darkMode = true;
+//   } else {
+//     document.body.style.backgroundColor = "white";
+//     document.body.style.color = "black";
+//     darkMode = false;
+//   }
+// };
+
+
+//***************PRACTICE EXERCISE 11.2*************
+// const divs = document.querySelectorAll("div");
+// divs.forEach((el) => {
+//   el.addEventListener("click", () => {
+//     document.body.style.backgroundColor = el.textContent;
+//   });
+// });
+
+
+
+//*****************PRACTICE EXERCISE 11.3************
+// document.addEventListener("DOMContentLoaded", (e) => {
+//   message("Document ready", e);
+// });
+// window.onload = (e) => {
+//   message("Window ready", e);
+// };
+// function message(val, event) {
+//   console.log(event);
+//   console.log(val);
+// }
+
+
+
+//**************PRACTICE EXERCISE 11.4 (SEE HTML)*********
 // const output = document.querySelector(".output");
 // output.textContent = "hello world";
 // output.style.height = "200px";
@@ -108,25 +264,9 @@
 //   output.style.backgroundColor = elColor;
 // }
 
-//THE EVENT TARGET PROPERTY
-// console.dir(event);
-//
-//EXAMPLE 1 (SEE HTML)
-// function triggerSomething() {
-//     console.dir(event.target);
-//     }
 
-//EXAMPLE 2 (SEE HTML)
-// function sendInfo() {
-//     let p = event.target.parentElement;
-//     message("Welcome " + p.firstname.value + " " + p.lastname.
-//    value);
-//     }
-//     function message(m) {
-//     document.getElementById("welcome").innerHTML = m;
-//     }
 
-//PRACTICE EXERCISE 11.5
+//************PRACTICE EXERCISE 11.5**************
 // const myInput = document.querySelector("input[name='message']");
 // const output = document.querySelector(".output");
 // const btn1 = document.querySelector(".btn1");
@@ -152,16 +292,10 @@
 //   myInput.value = "";
 // }
 
-// //DOM EVENT FLOW (SEE CSS & HTML)
-// function bubble() {
-//   console.log(this.innerText);
-// }
-// let divs = document.getElementsByTagName("div");
-// for (let i = 0; i < divs.length; i++) {
-//   divs[i].addEventListener("click", bubble, true);
-// }
 
-//PRACTICE EXERCISE 11.6 (SEE CSS & HTML)
+
+
+//*****PRACTICE EXERCISE 11.6 (SEE CSS & HTML)*****
 // const main = document.querySelector(".container");
 // const boxes = document.querySelectorAll(".box");
 
@@ -201,24 +335,8 @@
 //   );
 // });
 
-//ONCHANGE && ONBLUR (SEE HTML)
-// function logEvent() {
-//   let p = event.target;
-//   if (p.name === "firstname") {
-//     message("First Name Changed to " + p.value);
-//   } else {
-//     message("Last Name Changed to " + p.value);
-//   }
-// }
-// function sendInfo() {
-//   let p = event.target.parentElement;
-//   message("Welcome " + p.firstname.value + " " + p.lastname.value);
-// }
-// function message(m) {
-//   document.getElementById("welcome").innerHTML = m;
-// }
 
-//PRACTICE EXERCISE 11.7 (SEE HTML)
+//*******PRACTICE EXERCISE 11.7 (SEE HTML)********
 
 // const output = document.querySelector(".output1");
 
@@ -255,38 +373,11 @@
 //   output.textContent = str;
 // }
 
-//KEY EVENT HANDLER
-//event.key;
 
-//EXAMPLE 1(SEE HTML)
-// function numCheck() {
-//   message("Number: " + !isNaN(event.key));
-//   return !isNaN(event.key);
-// }
-// function numCheck2() {
-//   message("Not a number: " + isNaN(event.key));
-//   return isNaN(event.key);
-// }
-// function message(m) {
-//   document.getElementById("wrapper").innerHTML = m;
-// }
 
-// onkeypress="return numCheck2()";
 
-//EXAMPLE 2 (SEE HTML)
-// function numCheck() {
-//   message(!isNaN(event.key));
-//   return !isNaN(event.key);
-// }
-// function numCheck2() {
-//   message(isNaN(event.key));
-//   return isNaN(event.key);
-// }
-// function message(m) {
-//   document.getElementById("wrapper").innerHTML = m;
-// }
 
-//PRACTICE EXERCISE 11.8 (SEE HTML)
+//*********PRACTICE EXERCISE 11.8 (SEE HTML)*********
 // const output = document.querySelector(".output");
 // const eles = document.querySelectorAll("input");
 
@@ -304,22 +395,9 @@
 //   });
 // });
 
-//DRAG AND DROP ELEMENTS (SEE HTML & CSS)
-// let holderItem;
-// function dStart() {
-//   holderItem = event.target;
-// }
-// function nDrop() {
-//   event.preventDefault();
-// }
-// function dDrop() {
-//   event.preventDefault();
-//   if (event.target.className === "box") {
-//     event.target.appendChild(holderItem);
-//   }
-// }
 
-//PRACTICE EXERCISE 11.9 (SEE HTML & CSS)
+
+//********PRACTICE EXERCISE 11.9 (SEE HTML & CSS)*******
 // const dragme = document.querySelector("#dragme");
 // dragme.addEventListener("dragstart", (e) => {
 //   dragme.style.opacity = 0.5;
@@ -352,35 +430,10 @@
 //   console.log("Started");
 // }
 
-//FORM SUBMISSION
-//EXAMPLE 1 (SEE HTML)
-// let q = window.location.search;
-// let params = new URLSearchParams(q);
-// let name = params.get("name");
-// console.log(name);
 
-//EXAMPLE 2 (SEE HTML)
-// function valForm() {
-//   var p = event.target.children;
-//   if (p.firstName.value === "") {
-//     message("First name required!!");
-//     return false;
-//   }
-//   if (p.lastName.value === "") {
-//     message("Last name required!!");
-//     return false;
-//   }
-//   if (p.age.value === "") {
-//     message("Age required!!");
-//     return false;
-//   }
-//   return true;
-// }
-// function message(m) {
-//   document.getElementById("wrapper").innerHTML = m;
-// }
 
-//PRACTICE EXERCISE 11.10 (SEE HTML)
+
+//*******PRACTICE EXERCISE 11.10 (SEE HTML)**********
 // const form = document.querySelector("form");
 
 // form.addEventListener("submit", (e) => {
@@ -411,21 +464,8 @@
 //   return false;
 // }
 
-//ANIMATING ELEMENTS (SEE HTML & CSS)
-// function toTheRight() {
-//   let b = document.getElementById("block");
-//   let x = 0;
-//   setInterval(function () {
-//     if (x === 600) {
-//       clearInterval();
-//     } else {
-//       x++;
-//       b.style.left = x + "px";
-//     }
-//   }, 2);
-// }
 
-//PRACTICE EXERCISE 11.11 (SEE HTML & CSS)
+//*******PRACTICE EXERCISE 11.11 (SEE HTML & CSS)*****
 // const main = document.querySelector("#block");
 // let mover = { speed: 50, dir: 1, pos: 0 };
 // main.addEventListener("click", moveBlock);
@@ -445,6 +485,3 @@
 //     }
 //   }, 2);
 // }
-
-
-

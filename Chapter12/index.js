@@ -260,7 +260,7 @@
 
 //--------------------------------------------------------------------
 
-// // //PRACTICE EXERCISE 12.1 (SEE HTML)
+// // //********PRACTICE EXERCISE 12.1 (SEE HTML)***********
 // // // const output = document.getElementById("output");
 // // // const searchValue = document.getElementById("sText");
 // // // const replaceValue = document.getElementById("rText");
@@ -276,7 +276,7 @@
 // // // }
 
 
-// // //PRACTICE EXERCISE 12.2 (SEE HTML) [[[[[[[[[[[[[DEMO]]]]]]]]]]]]]]]]]]
+// // //***********PRACTICE EXERCISE 12.2 (SEE HTML) ***********
 // // // const output = document.querySelector(".output");
 // // // const emailVal = document.querySelector("input");
 // // // const btn = document.querySelector("button");
@@ -299,7 +299,7 @@
 
 
 
-// // //PRACTICE EXERCISE 12.6
+// // //***********PRACTICE EXERCISE 12.6***********
 // // // console.log(document.cookie);
 // // //  console.log(rCookie("test1"));
 // // //  console.log(rCookie("test"));
@@ -329,7 +329,7 @@
 // // //  }
 
 
-// // //PRACTICE EXERCISE 12.7 (SEE HTML)
+// // //***********PRACTICE EXERCISE 12.7 (SEE HTML)***********
 // // // const userTask = document.querySelector(".main input");
 // // // const addBtn = document.querySelector(".main button");
 // // // const output = document.querySelector(".output");
@@ -386,7 +386,7 @@
 // // // }
 
 
-// // //PRACTICE EXERCISE 12.8
+// // //***********PRACTICE EXERCISE 12.8***********
 // // // let myList = [
 // // //   {
 // // //     name: "Learn JavaScript",
@@ -405,7 +405,7 @@
 // // // }
 
 
-// // //PRACTICE EXERCISE 12.9
+// // //***********PRACTICE EXERCISE 12.9***********
 // // // let myList = [
 // // //   {
 // // //     name: "Learn JavaScript",
