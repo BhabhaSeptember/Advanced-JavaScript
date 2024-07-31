@@ -64,6 +64,7 @@
 //         let exp = /[A-Za-z0-9]+$/;
 //         let result = exp.test(el.value);
 //         if (!result) {
+//           //todo:
 //           addError(el, "Only numbers and Letters", tempName);
 //           error = true;
 //         }
@@ -91,44 +92,44 @@
 
 
 // //3. SIMPLE MATH QUIZ
-// let app = (function () {
-//   let val1 = document.querySelector(".val1");
-//   let val2 = document.querySelector(".val2");
-//   let output = document.querySelector(".output");
-//   let answer = document.querySelector("input");
-//   let game = {};
+let app = (function () {
+  let val1 = document.querySelector(".val1");
+  let val2 = document.querySelector(".val2");
+  let output = document.querySelector(".output");
+  let answer = document.querySelector("input");
+  let game = {};
 
-//   function init() {
-//     document.querySelector("button").addEventListener("click", checker);
-//     loadQuestion();
-//   }
+  function init() {
+    document.querySelector("button").addEventListener("click", checker);
+    loadQuestion();
+  }
 
-//   function ranValue(min, max) {
-//     return Math.floor(Math.random() * (max - min + 1) + min);
-//   }
+  function ranValue(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
 
-//   function loadQuestion() {
-//     game.val1 = ranValue(1, 100);
-//     game.val2 = ranValue(1, 100);
-//     game.answer = game.val1 + game.val2;
-//     val1.textContent = game.val1;
-//     val2.textContent = game.val2;
-//   }
+  function loadQuestion() {
+    game.val1 = ranValue(1, 100);
+    game.val2 = ranValue(1, 100);
+    game.answer = game.val1 + game.val2;
+    val1.textContent = game.val1;
+    val2.textContent = game.val2;
+  }
 
-//   function checker() {
-//     let mark = answer.value === game.answer ? "green" : "red";
-//     output.innerHTML += 
-//     `<div style="color:${mark}"> 
-//     ${game.val1} + ${game.val2} = ${game.answer} (${answer.value})
-//      </div>`;
-//     answer.value = "";
-//     loadQuestion();
-//   }
-//   return {
-//     init: init,
-//   };
-// })();
-// document.addEventListener("DOMContentLoaded", app.init);
+  function checker() {
+    let mark = answer.value === game.answer ? "green" : "red";
+    output.innerHTML += 
+    `<div style="color:${mark}"> 
+    ${game.val1} + ${game.val2} = ${game.answer} (${answer.value})
+     </div>`;
+    answer.value = "";
+    loadQuestion();
+  }
+  return {
+    init: init,
+  };
+})();
+document.addEventListener("DOMContentLoaded", app.init);
 
 
 
