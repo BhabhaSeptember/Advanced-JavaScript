@@ -101,10 +101,117 @@
 //*******************************WEB STORAGE CLEAR METHOD************************/
 
 //**********EXAMPLE 1: CLEAR ALL ITEMS FROM SESSION STORAGE OBJECT************/
-sessionStorage.clear();
-console.log("Session Storage: ", sessionStorage);
+// sessionStorage.clear();
+// console.log("Session Storage: ", sessionStorage);
 
 
 //**********EXAMPLE 2: CLEAR ALL ITEMS FROM LOCAL STORAGE OBJECT************/
-localStorage.clear();
-console.log("Local Storage: ", localStorage);
+// localStorage.clear();
+// console.log("Local Storage: ", localStorage);
+
+//----------------------------------------------------------------------------------
+
+
+//*******************************TODO LIST APP*******************************/
+
+// import './index.css';
+//SESSION STORAGE JS OBJECTS
+let sessionTodosContainer = document.getElementById('session-storage-todos-container');
+let sessionInputEle = document.getElementById('session-storage-todo-input-ele');
+let sessionAddTaskBtn = document.getElementById('session-storage-add-task-btn');
+
+//LOCAL STORAGE JS OBJECTS
+let localTodosContainer = document.getElementById("local-storage-todos-container");
+let localInputEle = document.getElementById("local-storage-todo-input-ele");
+let localAddTaskBtn = document.getElementById("local-storage-add-task-btn");
+
+
+
+function createTodoLiElements(todoArray, storageType) {
+  return todoArray.map((item, index) => {
+    let liElement = document.createElement('li');
+    let checkboxEle = document.createElement('input');
+    let labelEle = document.createElement('label');
+
+    checkboxEle.setAttribute('type', 'checkbox');
+    checkboxEle.setAttribute('id', `${storageType}-chbx-${index}`);
+    labelEle.setAttribute('for', `${storageType}-chbx-${index}`);
+
+    checkboxEle.addEventListener('click', (e) => {
+      let todoArr = JSON.parse(
+        storageType === "session" ? sessionStorage.getItem('codesweetlyStore') : localStorage.getItem("codesweetlyStore"));
+
+      //NOTE:  string.split(separator, limiter) i.e. creates a substring
+      todoArr[e.target.getAttribute('id').split('-')[2]].checked = !todoArr[e.target.getAttribute('id').split('-')[2]].checked;
+           
+      if (storageType === "session") {
+        sessionStorage.setItem("codesweetlyStore", JSON.stringify(todoArr));
+      } else {
+        localStorage.setItem("codesweetlyStore", JSON.stringify(todoArr));
+      }
+      labelEle.classList.toggle('todo-task-done');
+    });
+  
+    labelEle.textContent = item.text;
+    liElement.append(checkboxEle, labelEle);   
+    return liElement;
+
+  });
+}
+
+
+
+window.addEventListener('load', () => {
+    //Get existing session storage content or return empty array
+    let sessionTodoArray =  JSON.parse(sessionStorage.getItem('codesweetlyStore')) || [];
+    let localTodoArray = JSON.parse(localStorage.getItem("codesweetlyStore")) || [];
+    
+    console.log(sessionTodoArray);
+    console.log(localTodoArray);
+
+    //Create li elements
+    let sessionTodoLiElements = createTodoLiElements(sessionTodoArray);
+    let localTodoLiElements = createTodoLiElements(localTodoArray);
+    //Populate task display container with the li elements
+    sessionTodosContainer.replaceChildren(...sessionTodoLiElements);
+    localTodosContainer.replaceChildren(...localTodoLiElements);
+  });
+
+
+
+
+//SESSION STORAGE ADD TASK BUTTON
+sessionAddTaskBtn.addEventListener('click', () => {
+  // Get existing session storage's content, if any. Otherwise, return an empty array:
+  let currentTodoArray = JSON.parse(sessionStorage.getItem('codesweetlyStore')) || [];
+  // Merge currentTodoArray with the user's new input:
+  let newTodoArray = [
+    ...currentTodoArray,
+    { checked: false, text: sessionInputEle.value },
+  ];
+  // Add newTodoArray to the session storage object:
+  sessionStorage.setItem('codesweetlyStore', JSON.stringify(newTodoArray));
+  let todoLiElements = createTodoLiElements(newTodoArray);
+  sessionTodosContainer.replaceChildren(...todoLiElements);
+  sessionInputEle.value = '';
+});
+
+
+
+
+//LOCAL STORAGE ADD TASK BUTTON
+localAddTaskBtn.addEventListener("click", () => {
+    let currentTodoArray = JSON.parse(localStorage.getItem("codesweetlyStore")) || [];
+    let newTodoArray = [
+    ...currentTodoArray,
+    { checked: false, text: localInputEle.value}
+];
+localStorage.setItem("codesweetlyStore", JSON.stringify(newTodoArray));
+let todoLiElements = createTodoLiElements(newTodoArray);
+localTodosContainer.replaceChildren(...todoLiElements);
+localInputEle.value = "";
+});
+
+
+
+
