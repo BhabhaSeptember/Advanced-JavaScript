@@ -1,26 +1,26 @@
 
 // // //CHAPTER PROJECTS
 // // // 1. EMAIL EXTRACTOR
-let firstArea = document.querySelector("textarea[name='txtarea']");
-let secArea = document.querySelector("textarea[name='txtarea2']");
-let btn = document.querySelector("button");
+// let firstArea = document.querySelector("textarea[name='txtarea']");
+// let secArea = document.querySelector("textarea[name='txtarea2']");
+// let btn = document.querySelector("button");
 
-btn.addEventListener("click", lookUp);
+// btn.addEventListener("click", lookUp);
 
-function lookUp() {
-  let inputEmail = firstArea.value;
-// // If you want something at least once, but optionally more often, you can use the plus sign: +
-  let validEmail = inputEmail.match(
-    /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi  //'g' - to find all matches
-  );
-  let emailList = [];
-  for (let x = 0; x < validEmail.length; x++) {
-    if (emailList.indexOf(validEmail[x]) === -1) { //if input email is not already defined in email list array
-      emailList.push(validEmail[x]);
-    }
-  }
-  secArea.value = emailList.join(",");
-};
+// function lookUp() {
+//   let inputEmail = firstArea.value;
+// // // If you want something at least once, but optionally more often, you can use the plus sign: +
+//   let validEmail = inputEmail.match(
+//     /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi  //'g' - to find all matches
+//   );
+//   let emailList = [];
+//   for (let x = 0; x < validEmail.length; x++) {
+//     if (emailList.indexOf(validEmail[x]) === -1) { //if input email is not already defined in email list array
+//       emailList.push(validEmail[x]);
+//     }
+//   }
+//   secArea.value = emailList.join(",");
+// };
 
 
 // // // //2. FORM VALIDATOR
@@ -92,44 +92,48 @@ function lookUp() {
 
 
 // //3. SIMPLE MATH QUIZ
-// let app = (function () {
-//   let val1 = document.querySelector(".val1");
-//   let val2 = document.querySelector(".val2");
-//   let output = document.querySelector(".output");
-//   let answer = document.querySelector("input");
-//   let game = {};
+let app = (function () {
+  let val1 = document.querySelector(".val1");
+  let val2 = document.querySelector(".val2");
+  let output = document.querySelector(".output");
+  let answer = document.querySelector("input");
+  let game = {};
 
-//   function init() {
-//     document.querySelector("button").addEventListener("click", checker);
-//     loadQuestion();
-//   }
+  function init() {
+    document.querySelector("button").addEventListener("click", checker);
+    loadQuestion();
+  }
 
-//   function ranValue(min, max) {
-//     return Math.floor(Math.random() * (max - min + 1) + min);
-//   }
-
-//   function loadQuestion() {
-//     game.val1 = ranValue(1, 100);
-//     game.val2 = ranValue(1, 100);
-//     game.answer = game.val1 + game.val2;
-//     val1.textContent = game.val1;
-//     val2.textContent = game.val2;
-//   }
-
-//   function checker() {
-//     let mark = answer.value === game.answer ? "green" : "red";
-//     output.innerHTML += 
-//     `<div style="color:${mark}"> 
-//     ${game.val1} + ${game.val2} = ${game.answer} (${answer.value})
-//      </div>`;
-//     answer.value = "";
-//     loadQuestion();
-//   }
-//   return {
-//     init: init,
-//   };
-// });
-// document.addEventListener("DOMContentLoaded", app.init);
+  function ranValue(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
 
 
+
+  function loadQuestion() {
+    game.val1 = ranValue(1, 100);
+    game.val2 = ranValue(1, 100);
+    game.answer = game.val1 + game.val2;
+    val1.textContent = game.val1;
+    val2.textContent = game.val2;
+  }
+
+  function checker() {
+    let mark = answer.value == game.answer ? "green" : "red";
+    output.innerHTML += 
+    `<div style="color:${mark}"> 
+    ${game.val1} + ${game.val2} = ${game.answer} (${answer.value})
+     </div>`;
+    answer.value = "";
+    loadQuestion();
+  }
+  return {
+    init: init
+  };
+})();
+document.addEventListener("DOMContentLoaded", app.init);
+
+
+
+//________________________
 

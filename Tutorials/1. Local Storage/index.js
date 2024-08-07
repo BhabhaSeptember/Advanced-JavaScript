@@ -126,7 +126,6 @@ let localInputEle = document.getElementById("local-storage-todo-input-ele");
 let localAddTaskBtn = document.getElementById("local-storage-add-task-btn");
 
 
-
 function createTodoLiElements(todoArray, storageType) {
   return todoArray.map((item, index) => {
     let liElement = document.createElement('li');
@@ -159,8 +158,6 @@ function createTodoLiElements(todoArray, storageType) {
   });
 }
 
-
-
 window.addEventListener('load', () => {
     //Get existing session storage content or return empty array
     let sessionTodoArray =  JSON.parse(sessionStorage.getItem('codesweetlyStore')) || [];
@@ -176,8 +173,6 @@ window.addEventListener('load', () => {
     sessionTodosContainer.replaceChildren(...sessionTodoLiElements);
     localTodosContainer.replaceChildren(...localTodoLiElements);
   });
-
-
 
 
 //SESSION STORAGE ADD TASK BUTTON
@@ -197,8 +192,6 @@ sessionAddTaskBtn.addEventListener('click', () => {
 });
 
 
-
-
 //LOCAL STORAGE ADD TASK BUTTON
 localAddTaskBtn.addEventListener("click", () => {
     let currentTodoArray = JSON.parse(localStorage.getItem("codesweetlyStore")) || [];
@@ -213,5 +206,12 @@ localInputEle.value = "";
 });
 
 
+//**************************BONUS EXERCISE********************/
+
+console.log("Session Storage Length: \n", sessionStorage.length);
+
+console.log("Local Storage Index 0: \n", localStorage[0]);
+
+// sessionStorage.clear();
 
 

@@ -64,6 +64,19 @@
 // console.log("Data is being fetched...");
 
 
+//**************CALLBACK HELL***************/
+// getData(function(a){
+//     getMoreData(a, function(b){
+//       getEvenMoreData(b, function(c) {
+//         getEvenEvenMoreData(c, function(d) {
+//           getFinalData(d, function(finalData) {
+//             console.log(finalData);
+//           });
+//         });
+//       });
+//     });
+//   });
+
 //***********************PROMISES****************************/
 
 //****CREATING A PROMISE*****/
@@ -92,13 +105,56 @@
 
 
 //****CHAINING PROMISES*****/
-fetch("https://example.com/data")
-.then(response => response.json())
-.then(data => processData(data))
-.then(processedData => {
-    //code to execute with processed data
-})
-.catch(error => console.log(error));
+// fetch("http://jsonplaceholder.typicode.com/users")
+// .then(response => response.json())
+// .then(data => processData(data))
+// .then(processedData => {
+//     console.log(processedData);
+// })
+// .catch(error => console.log(error));
+
+// function processData(data) {
+//     // Example function to process data
+//     return data.map(user => ({
+//       id: user.id,
+//       name: user.name,
+//       email: user.email
+      
+//     }))
+//   };
+
+//***********************ERROR HANDLING****************************/
+
+// fetch("https://api.github.com/users/octocat")
+// .then( (response) => response.json())
+// .then( (data) => {
+//     try {
+//         //processing received data
+//         console.log(data);
+//     } catch (error) {
+//         console.log(error);
+//     }
+// })
+// .catch( (error) => console.log(error));
 
 
+//**********************PROMISE.ALL METHOD****************************/
+
+// let promise1 = fetch('https://jsonplaceholder.typicode.com/posts/1');
+// let promise2 = fetch('https://jsonplaceholder.typicode.com/posts/2');
+// let promise3 = fetch('https://jsonplaceholder.typicode.com/posts/3');
+
+// Promise.all([promise1, promise2, promise3])
+// .then( (values) => {
+//     console.log(values);
+// });
+
+
+//**********************ASYNC/AWAIT FUNCTIONS****************************/
+// async function getData() {
+//     let response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+//     let data = await response.json();
+//     console.log(data);
+//   }
+//   getData();
 
