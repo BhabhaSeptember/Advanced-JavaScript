@@ -65,6 +65,7 @@
 
 
 //**************CALLBACK HELL***************/
+
 // getData(function(a){
 //     getMoreData(a, function(b){
 //       getEvenMoreData(b, function(c) {
@@ -91,7 +92,7 @@
 // console.log(myPromise);
 
 
-//****CONSUMING A PROMISE*****/
+// //****CONSUMING A PROMISE*****/
 // myPromise
 // .then((result) => {
 //     console.log(result);
@@ -151,6 +152,7 @@
 
 
 //**********************ASYNC/AWAIT FUNCTIONS****************************/
+
 // async function getData() {
 //     let response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
 //     let data = await response.json();

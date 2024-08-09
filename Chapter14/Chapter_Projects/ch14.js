@@ -1,13 +1,13 @@
 
 //CHAPTER PROJECTS
 //1. MATRIX EFFECT
-// const canvas = document.createElement("canvas");
-// const ctx = canvas.getContext("2d");
+// let canvas = document.createElement("canvas");
+// let ctx = canvas.getContext("2d");
 // canvas.setAttribute("width", "500");
 // canvas.setAttribute("height", "400");
 // document.body.prepend(canvas);
 
-// const colVal = [];
+// let colVal = [];
 // for (let x = 0; x < 50; x++) { // # of value 0 items to be added to array (10px between each column)
 //   colVal.push(0);
 // }
@@ -100,15 +100,15 @@
 // }
 
 // //3. ONLINE PAINT APP
-const canvas = document.querySelector("#canvas");
-const ctx = canvas.getContext("2d");
-const penColor = document.querySelector("#penColor");
-const penWidth = document.querySelector("#penWidth");
-const btnSave = document.querySelector(".save");
-const btnClear = document.querySelector(".clear");
-const output = document.querySelector(".output");
+let canvas = document.querySelector("#canvas");
+let ctx = canvas.getContext("2d");
+let penColor = document.querySelector("#penColor");
+let penWidth = document.querySelector("#penWidth");
+let btnSave = document.querySelector(".save");
+let btnClear = document.querySelector(".clear");
+let output = document.querySelector(".output");
 
-const mLoc = { //tracks location of pen
+let mLoc = { //tracks location of pen
   draw: false,
   x: 0,
   y: 0,
@@ -152,12 +152,12 @@ function draw() {
 }
 
 function saveImg() {
-  const dataURL = canvas.toDataURL();
+  let dataURL = canvas.toDataURL();
   console.log(dataURL);
-  const img = document.createElement("img");
+  let img = document.createElement("img");
   output.prepend(img);
   img.setAttribute("src", dataURL);
-  const link = document.createElement("a"); //to set download must create an anchor tag
+  let link = document.createElement("a"); //to set download must create an anchor tag
   output.append(link);
   let fileName = Math.random().toString(16).substr(-8) + ".png";
   link.setAttribute("download", fileName); //hyperlink set to download attribute
