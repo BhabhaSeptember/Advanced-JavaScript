@@ -7,7 +7,7 @@ let chatInput = document.querySelector(".chat-input textarea");
 let sendChatBtn = document.querySelector(".chat-input span");
 
 let userMessage = null; // Variable to store user's message
-let inputInitHeight = chatInput.scrollHeight;
+let inputInitHeight = chatInput.scrollHeight; //Initial scroll height of chatInput
 
 // API configuration
 let API_KEY = "PASTE-YOUR-API-KEY-HERE"; // Your API key here
