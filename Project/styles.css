@@ -1,0 +1,48 @@
+body {
+    background-color: black;
+    background-image: url("images/CoverBanner.png");
+    background-repeat: no-repeat ;
+    background-size: cover;
+    color: white
+}
+
+h1 {
+    text-align : center;
+    font-size: 60px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 35px;
+}
+
+.form {
+    border: 5px, solid, rgb(42, 68, 31);
+    width: 500px;
+    padding: 50px;
+    margin-left: 200px;
+    font-size: 15px;
+    left: 400px
+    /* position: center; */
+
+}
+
+/* .form p {
+    font-size: 25px;
+} */
+
+#pSignup {
+    font-size: 25px;
+}
+
+#pLogin {
+    font-size: 25px;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
