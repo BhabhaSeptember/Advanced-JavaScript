@@ -9,7 +9,7 @@
 <body>
     <header>
         <h1> Welcome to Click 'n Pay </h1>
-        <h2><i><u>Easy Online Grocery Shopping</u></i></h2>
+        <h2><i><u>Quick Online Grocery Store!</u></i></h2>
         <br>
         <br>
         <br>
@@ -18,6 +18,7 @@
    
     <form id="loginForm">
         <p id="pLogin"><i>Enter your login details below to start shopping!</i></p>
+        <br>
         <label for="name"> Username:</label>
         <br>
         <input type="text" id="name" name="name">
@@ -27,7 +28,11 @@
         <input type="text" id="password" name="password">
         <br><br>
         <br><br>
-        <button type="button" onclick="convertToJson()"> Login </button>
+        
+        <button type="button" id="loginButton" onclick="convertToJson()"> Login </button>
+        <label>
+            <input type="checkbox" id="rememberMe" name="rememberMe"> Remember Me
+        </label>
     </form>
     
     

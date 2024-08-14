@@ -17,18 +17,38 @@ h2 {
 }
 
 form {
-    border: 5px, solid, rgb(42, 68, 31);
+    border: 5px, solid, rgb(106, 192, 69);
     width: 500px;
     padding: 50px;
     margin-left: 200px;
     font-size: 15px;
-    left: 400px
+    left: 400px;
+    font-size: 20px;
+    
+}
+
+input {
+    height: 20px;
+    
+}
+
+#pLogin {
+    font-size: 25px;
+    color: greenyellow
+}
+
+
+#loginButton {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+
+#loginButton:hover {
+    background-color: greenyellow;
     
 
 }
 
 
-#pLogin {
-    font-size: 25px;
-}
 
