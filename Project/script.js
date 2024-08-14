@@ -1,59 +1,19 @@
 "use strict";
 
-//*****************************************SIGNUP FORM JS OBJECTS**********************************/
-let signupForm = document.getElementById("signupForm");
-let fullName = document.getElementById("fullName");
-let email = document.getElementById("email");
-let signupPassword = document.getElementById("signupPassword");
-let address = document.getElementById("address");
-let signupButton = document.getElementById("signupButton");
-let signLoginButton = document.getElementById("signLoginButton");
-
-
-
 //*****************************************LOGIN FORM JS OBJECTS**********************************/
-let loginForm = document.getElementById("loginForm");
-let userName = document.getElementById("userName");
-let loginPassword = document.getElementById("loginPassword");
-let loginButton = document.getElementById("loginButton");
 
-
-
-
-
-
-// console.log(formData);
-
-// console.log(userName);
-
-// function convertToJSON() {
-
-// }
-
-
-
-
-// window.addEventListener("load", ()=> {
-//     loginForm.classList.add("hide");
-//     signupForm.classList.add("show");
-//     // break;
-// });
-
-
-loginButton.addEventListener("click", () => {
-    let tempUserName = JSON.stringify(userName);
-    // alert(`Welcome back ${tempUserName}`);
-    console.log(tempUserName.textContent)
-});
-
-signupButton.addEventListener("click", () => {
-
-});
-
-signLoginButton.addEventListener("click", () => {
-    console.log("Logging onto existing account...")
-    // loginForm.classList.remove("hide");
-    // signupForm.classList.remove("show");
-})
-
-console.log("Hello")
+function convertToJson() {
+    let form = document.getElementById("loginForm");
+    let username = document.getElementById("name");
+    let formData = {};
+    for (let i = 0; i < form.elements.length - 1; i++) {
+        let element = form.elements[i];
+        if (element.type !== "button" && element.id !== "password") {
+            formData[element.name] = element.value;
+        }
+    }
+    let jsonData = JSON.stringify(formData);
+    console.log(jsonData);
+    console.log(username.value);
+    alert(`Welcome back ${username.value} ! \n\nCheck out our new specials!!`);
+};

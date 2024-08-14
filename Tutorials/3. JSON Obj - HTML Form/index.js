@@ -18,6 +18,7 @@ function convertToJson() {
     //Updates content of output div with JSON string
     //<pre> tags are for better readability
     let jsonOutput = document.getElementById("jsonOutput");
+    console.log(jsonData)
     jsonOutput.innerHTML = "<pre>" + jsonData + "</pre>";
 };
 
